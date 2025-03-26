@@ -1,0 +1,140 @@
+site_name: Hephaestus Documentation
+site_description: Documentation for the Hephaestus AI Flow Engine
+site_author: Hephaestus Team
+site_url: https://your-org.github.io/hephaestus/
+
+# Repository
+repo_name: your-org/hephaestus
+repo_url: https://github.com/your-org/hephaestus
+edit_uri: edit/main/docs/
+
+# Copyright
+copyright: Copyright &copy; 2024 - 2025 Hephaestus Team
+
+# Theme configuration
+theme:
+  name: material
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.indexes
+    - navigation.top
+    - search.highlight
+    - search.share
+    - search.suggest
+    - content.code.copy
+    - content.tabs.link
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  icon:
+    repo: fontawesome/brands/github
+  logo: assets/images/logo.png
+  favicon: assets/images/favicon.png
+
+# Customization
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/your-org
+    - icon: fontawesome/brands/slack
+      link: https://your-org.slack.com
+
+# Extensions
+markdown_extensions:
+  - admonition
+  - attr_list
+  - codehilite
+  - def_list
+  - footnotes
+  - md_in_html
+  - meta
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+  - tables
+  - toc:
+      permalink: true
+
+# Plugins
+plugins:
+  - search
+  - git-revision-date-localized:
+      type: date
+  - minify:
+      minify_html: true
+  - mkdocstrings:
+      handlers:
+        python:
+          options:
+            show_source: true
+            show_category_heading: true
+            show_root_heading: true
+  - include-markdown
+
+# Navigation
+nav:
+  - Home: index.md
+  - Guides:
+    - Getting Started: guides/getting_started.md
+    - Installation: guides/installation.md
+    - Configuration: guides/configuration.md
+  - Concepts:
+    - Architecture: concepts/architecture.md
+    - Flow Engine: concepts/flow_engine.md
+    - Nodes: concepts/nodes.md
+  - Components:
+    - Overview: components/index.md
+    - Scoring: components/scoring/index.md
+    - Flow: components/flow/index.md
+    - Engine: components/engine/index.md
+  - Reference:
+    - API Reference: reference/api.md
+    - Configuration Options: reference/configuration.md
+  - Development:
+    - Contributing: development/contributing.md
+    - Code Style: development/code_style.md
+    - Testing: development/testing.md
+  - Status:
+    - Project Status: status/project_status.md
+    - Roadmap: status/roadmap.md
+    - Changelog: status/changelog.md
+  - About:
+    - About Hephaestus: about/index.md
+    - License: about/license.md
+
+# Extra CSS
+extra_css:
+  - assets/stylesheets/extra.css 

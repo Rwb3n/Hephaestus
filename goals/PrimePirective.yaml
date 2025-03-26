@@ -1,0 +1,9 @@
+goal: Expand system capability through recursive tool and flow creation
+constraints:
+  - max_lines_per_file: 200
+  - immutable_core_modules: ["/heph/engine/core/", "/heph/boot/"]
+  - require_registry_logging: true
+reward_criteria:
+  - new_flow increases problem scope
+  - uses prior components
+  - passes test

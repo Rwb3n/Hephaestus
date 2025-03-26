@@ -1,0 +1,99 @@
+site_name: Hephaestus
+site_url: https://example.org/hephaestus
+site_description: A lightweight and flexible workflow orchestration framework for Python
+site_author: Your Name
+
+repo_name: username/hephaestus
+repo_url: https://github.com/username/hephaestus
+
+theme:
+  name: material
+  palette:
+    primary: indigo
+    accent: indigo
+  icon:
+    repo: fontawesome/brands/github
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight
+  - pymdownx.tabbed:
+      alternate_style: true
+  - attr_list
+  - md_in_html
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - tables
+  - toc:
+      permalink: true
+
+plugins:
+  - search
+  - autorefs
+  - mkdocstrings:
+      handlers:
+        python:
+          import:
+            - https://docs.python-requests.org/en/master/objects.inv
+          options:
+            show_source: true
+            show_if_no_docstring: true
+            heading_level: 3
+            members_order: source
+            show_root_heading: true
+
+nav:
+  - Home: index.md
+  - Concepts:
+    - Architecture: concepts/architecture.md
+    - Execution Model: concepts/execution.md
+    - Nodes: concepts/nodes.md
+    - Flows: concepts/flows.md
+  - Components:
+    - Overview: components/index.md
+    - Goal Proposer: components/goal_proposer.md
+    - Mutation Engine: components/mutation.md
+    - Test Harness: components/test_harness.md
+    - Scoring System: components/scoring.md
+    - Forge Loop: components/forge_loop.md
+    - Registry: components/registry.md
+    - Directive Format: components/directive_format.md
+    - Test Debug Protocol: components/test_debug_protocol.md
+  - Guides:
+    - Getting Started: guides/getting-started.md
+    - Running Tests: guides/test-run.md
+    - Creating Nodes: guides/creating-nodes.md
+    - Creating Flows: guides/creating-flows.md
+    - Error Handling: guides/error-handling.md
+  - Reference:
+    - API: reference/api.md
+    - Configuration: reference/configuration.md
+  - Development:
+    - Contributing: development/contributing.md
+    - Testing: development/testing.md
+  - Project Status:
+    - Roadmap: roadmap.md
+    - Project Status: project_status.md
+    - Phase Progress: phase_progress.md
+    - Status Updates: 
+      - March 27: status_update_march_27.md
+      - March 28: status_update_march_28.md
+  - Proposals:
+    - Documentation Reorganization: proposals/doc_reorganization_proposal.md
+  - About:
+    - License: about/license.md
+    - FAQ: about/faq.md
+    - Troubleshooting: about/troubleshooting.md
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/username/hephaestus
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/username
+  copyright: Copyright &copy; 2023 Your Name
+
+docs_dir: 'docs' 

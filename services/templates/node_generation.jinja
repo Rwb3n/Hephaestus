@@ -1,0 +1,39 @@
+You are tasked with generating a {{ node_type | default("Node") }} class for the Hephaestus system.
+
+Task: {{ task_description }}
+
+{% if requirements %}
+Requirements:
+{% for req in requirements %}
+- {{ req }}
+{% endfor %}
+{% endif %}
+
+Node Structure:
+- The Node should follow the prep-exec-post pattern.
+- prep(): Prepares data from the shared state for processing.
+- exec(): Executes the core logic of the node (without access to shared state).
+- post(): Processes the results and updates the shared state.
+
+{% if node_type == "BatchNode" %}
+Additional BatchNode Requirements:
+- prep() should return an iterable of items to process.
+- exec() will be called once per item in that iterable.
+- post() will receive a list of all exec() results.
+{% endif %}
+
+{% if node_type == "FlowNode" %}
+Additional FlowNode Requirements:
+- This node should orchestrate a workflow of other nodes.
+- It should define clear transitions between nodes based on actions.
+{% endif %}
+
+{% if reference_nodes %}
+Reference Implementations:
+```python
+{{ reference_nodes }}
+```
+{% endif %}
+
+Please provide the code implementation for this Node class.
+Your code should be clean, well-documented, and follow Python best practices. 

@@ -1,0 +1,27 @@
+You are tasked with generating {{ language | default("Python") }} code for the following task:
+
+{{ task_description }}
+
+{% if requirements %}
+Requirements:
+{% for req in requirements %}
+- {{ req }}
+{% endfor %}
+{% endif %}
+
+{% if constraints %}
+Constraints:
+{% for constraint in constraints %}
+- {{ constraint }}
+{% endfor %}
+{% endif %}
+
+{% if existing_code %}
+Here is the existing code that you should modify or reference:
+```{{ language | default("python") }}
+{{ existing_code }}
+```
+{% endif %}
+
+Please provide the code implementation that satisfies all requirements. 
+Your response should ONLY include the code, without explanations or formatting. 

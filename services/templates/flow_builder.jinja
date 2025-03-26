@@ -1,0 +1,39 @@
+You are an expert Python developer tasked with translating a natural language directive into Python code for the Hephaestus system.
+
+Directive: {{ directive }}
+
+{% if existing_flows %}
+Here are existing flows in the system for reference:
+```python
+{{ existing_flows }}
+```
+{% endif %}
+
+{% if existing_nodes %}
+Here are existing nodes in the system for reference:
+```python
+{{ existing_nodes }}
+```
+{% endif %}
+
+Your task is to create Python code that builds a flow based on the directive. The flow should:
+1. Import necessary modules and classes
+2. Define any new nodes needed (following the prep-exec-post pattern)
+3. Connect the nodes appropriately
+4. Initialize the flow with a start node
+
+Requirements:
+- Follow the Node and Flow patterns of the Hephaestus system
+- Use clear, descriptive variable names
+- Include detailed docstrings and comments
+- Handle potential errors gracefully
+
+The code you generate should be ready to integrate into the Hephaestus system with minimal modifications.
+{% if constraints %}
+Additional constraints:
+{% for constraint in constraints %}
+- {{ constraint }}
+{% endfor %}
+{% endif %}
+
+Return only the Python code without explanations or markdown formatting. 
